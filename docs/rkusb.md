@@ -32,5 +32,52 @@ sdk中提供的loader在backus项目中下载后hangup。本文档所述流程�
 
 生成的loader文件名为`rk3328_loader_v1.13.249.bin`，本项目的`files`目录下有该文件副本。
 
+### 使用
+
+## idbloader
+
+sdk中的idbloader合成使用
+
+- rk3328_ddr_800MHz_v1.00.bin
+- rk3328_miniloader_v2.38.bin
+
+无法启动。
+
+```
+DDR Version 1.00 20161115_rd_wr_gap_rfc_noc
+In
+SRX
+800MHz
+rd addr 0x8000 = 0xFFFFFFFF
+rd addr 0x40008000 = 0xFFFFFFFF
+ERR
+```
+
+对应的rockchip-linux/build的commit为9343881a。
+
+尝试修改为
+
+- rk3328_ddr_333MHz_v1.13.bin
+- rk322xh_miniloader_v2.49.bin
+
+rkdeveloptool烧入的gpt有错误，使用的parameter_gpts.txt
+
+```
+FIRMWARE_VER: 6.0.0
+MACHINE_MODEL: RK3399
+MACHINE_ID: 007
+MANUFACTURER: RK3399
+MAGIC: 0x5041524B
+ATAG: 0x00200800
+MACHINE: 3399
+CHECK_MASK: 0x80
+PWR_HLD: 0,0,A,0,1
+#KERNEL_IMG: 0x00280000
+#FDT_NAME: rk-kernel.dtb
+#RECOVER_KEY: 1,1,0,20,0
+#in section; per section 512(0x200) bytes
+CMDLINE: mtdparts=rk29xxnand:0x00001f40@0x00000040(loader1),0x00000080@0x00001f80(reserved1),0x00002000@0x00002000(reserved2),0x00002000@0x00004000(loader2),0x00002000@0x00006000(atf),0x00038000@0x00008000(boot:bootable),-@0x0040000(rootfs)
+```
+
 
 
