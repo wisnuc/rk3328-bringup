@@ -22,3 +22,9 @@ RK3328 board bring-up大体分为两个部分的工作。
 
 u-boot使用Linux的标准方式，用boot_distro载入boot.scr启动。
 
+文档：
+
+- [partition](partition.md)
+- [build loaders](loader.md)
+- [rkdeveloptool](rkdeveloptool.md)
+
