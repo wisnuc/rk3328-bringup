@@ -4,8 +4,8 @@ RK3328 board bring-up大体分为两个部分的工作。
 
 第一个部分包括：
 
-1. mmc/emmc分区方案
-2. loader的制作，包括
+1. [mmc/emmc分区方案](partition.md)
+2. [loader](loader.md)的制作，包括
    1. 用于rkusb模式烧录工具的loader；
    2. emmc启动使用的idbloader
    3. emmc启动使用的uboot
